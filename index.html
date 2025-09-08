@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zainii | Frontend Developer & Full Stack Engineer</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    .slide-in-left {
+      animation: slideInLeft 1s ease forwards;
+      opacity: 0;
+    }
+    .slide-in-right {
+      animation: slideInRight 1s ease forwards;
+      opacity: 0;
+    }
+    .zoom-in {
+      animation: zoomIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    /* Hover underline animation for links */
+    a.underline-hover {
+      position: relative;
+      color: #10b981; /* emerald-500 */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a.underline-hover::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #10b981;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    a.underline-hover:hover {
+      color: #059669; /* emerald-600 */
+    }
+    a.underline-hover:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-200 font-sans">
+
+  <!-- Container -->
+  <div class="max-w-4xl mx-auto p-8">
+
+    <!-- Header -->
+    <header class="text-center mt-12 fade-in" style="animation-delay: 0.2s;">
+      <h1 class="text-5xl font-extrabold mb-2 tracking-tight text-emerald-400 hover:text-emerald-500 transition duration-500 cursor-default">
+        Hi, I'm <span class="text-emerald-400">Zainii</span>
+      </h1>
+      <p class="text-lg text-slate-400 tracking-wide font-medium">Frontend Developer & Full Stack Engineer</p>
+    </header>
+
+    <!-- About Me -->
+    <section class="mt-16 slide-in-left" style="animation-delay: 0.4s;">
+      <h2 class="text-3xl font-semibold underline decoration-emerald-400 decoration-4 mb-4">
+        About Me
+      </h2>
+      <p class="text-slate-300 leading-relaxed text-lg max-w-3xl mx-auto">
+        Passionate web developer specializing in frontend technologies like React.js, Tailwind CSS, and JavaScript. With a strong background in ICS, I’m currently expanding my skills into backend development to deliver full-stack solutions. I craft responsive, user-friendly websites that help businesses grow efficiently online.
+      </p>
+    </section>
+
+    <!-- What I Do -->
+    <section class="mt-16 slide-in-right" style="animation-delay: 0.6s;">
+      <h2 class="text-3xl font-semibold underline decoration-emerald-400 decoration-4 mb-4">
+        What I Do
+      </h2>
+      <ul class="list-disc list-inside text-slate-300 text-lg max-w-3xl mx-auto space-y-3">
+        <li>Build modern and responsive websites using React and Tailwind CSS.</li>
+        <li>Develop interactive user interfaces with smooth animations.</li>
+        <li>Currently learning backend technologies (Node.js, Express, MongoDB).</li>
+        <li>Deliver quality work with clear communication and attention to detail.</li>
+      </ul>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="mt-16 zoom-in" style="animation-delay: 0.8s;">
+      <h2 class="text-3xl font-semibold underline decoration-emerald-400 decoration-4 mb-4 text-center">
+        Why Choose Me
+      </h2>
+      <ul class="list-disc list-inside text-slate-300 text-lg max-w-3xl mx-auto space-y-3">
+        <li>Clean, maintainable, and efficient code.</li>
+        <li>Quick learner and always up for new challenges.</li>
+        <li>Strong problem-solving skills and team player.</li>
+        <li>Focused on client satisfaction and timely delivery.</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="mt-16 mb-20 fade-in text-center" style="animation-delay: 1s;">
+      <h2 class="text-3xl font-semibold underline decoration-emerald-400 decoration-4 mb-4">
+        Contact Me
+      </h2>
+      <p class="text-slate-300 text-lg mb-4">
+        I’m available for freelance work or collaboration. Reach out via email:
+      </p>
+      <a href="mailto:zainiich04@gmail.com" class="underline-hover text-lg font-semibold">
+        zainiich04@gmail.com
+      </a>
+    </section>
+
+  </div>
+
+</body>
+</html>
