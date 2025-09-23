@@ -48,7 +48,6 @@
       font-size:18px;
       box-shadow:0 8px 20px rgba(2,6,23,0.08);
     }
-    .brand .text { line-height:1; }
     .brand .text .name { font-size:18px; font-weight:800; color:#0b2a44; }
     .brand .text .role { font-size:13px; color:var(--muted); margin-top:4px; }
     .menu {
@@ -254,6 +253,7 @@
     // Contact form → WhatsApp first, fallback Gmail
     document.getElementById('sendBtn').addEventListener('click', function(e){
       e.preventDefault();
+
       const name = document.getElementById('cname').value.trim();
       const email = document.getElementById('cemail').value.trim();
       const msg = document.getElementById('cmsg').value.trim();
@@ -263,15 +263,15 @@
         return;
       }
 
-      const fullMsg = New Message from Portfolio:\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg};
+      const fullMsg = New Message from Portfolio:%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${msg};
 
-      const whatsappLink = https://wa.me/923163516125?text=${encodeURIComponent(fullMsg)};
-      const gmailLink = mailto:zainiich04@gmail.com?subject=New Portfolio Message&body=${encodeURIComponent(fullMsg)};
+      const whatsappLink = https://wa.me/923163516125?text=${fullMsg};
+      const gmailLink = mailto:zainiich04@gmail.com?subject=New Portfolio Message&body=${fullMsg};
 
-      // Try WhatsApp first
+      // ✅ Open WhatsApp first
       window.location.href = whatsappLink;
 
-      // Fallback Gmail after 3s
+      // ✅ Fallback Gmail after 3s
       setTimeout(()=>{ window.location.href = gmailLink; }, 3000);
     });
 
