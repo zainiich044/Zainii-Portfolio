@@ -130,7 +130,7 @@
     .bar-wrap { background:#eef2f6; height:12px; border-radius:10px; overflow:hidden; }
     .bar { height:100%; background:linear-gradient(90deg,var(--accent), #ff8a42); border-radius:10px; }
 
-    /* PROJECTS list (vertical cards like screenshot) */
+    /* PROJECTS list (vertical cards with direct Unsplash links) */
     .projects-list { display:flex; flex-direction:column; gap:18px; margin-top:12px; }
     .proj-card {
       background:var(--card-bg);
@@ -147,7 +147,7 @@
     .proj-body h3 { margin:0; color:var(--blue); font-size:18px; }
     .proj-body p { margin:8px 0 0; color:#475569; font-size:14px; line-height:1.45; }
 
-    /* CONTACT - screenshot-like card + email/location below */
+    /* CONTACT - form card */
     .contact-wrap { margin-top:12px; }
     .contact-card {
       background:var(--card-bg);
@@ -186,13 +186,6 @@
       cursor:pointer;
       box-shadow:0 12px 30px rgba(249,115,22,0.12);
     }
-    /* IMPORTANT: email & location must appear BELOW the form, not inside the card */
-    .contact-info {
-      margin-top:14px;
-      font-size:15px;
-      color:#374151;
-    }
-    .contact-info .email { color: var(--accent); font-weight:700; display:block; margin-bottom:6px; }
 
     footer {
       margin-top:28px;
@@ -292,7 +285,19 @@
 
       <div class="projects-list" role="list">
         <article class="proj-card" role="article">
-          <div class="proj-thumb"><img src="https://source.unsplash.com/400x300/?ecommerce,store" alt="ShopSphere"></div>
+          <div class="proj-thumb">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SkyAdmin">
+          </div>
+          <div class="proj-body">
+            <h3>SkyAdmin</h3>
+            <p>Powerful admin dashboard for analytics and user management.</p>
+          </div>
+        </article>
+
+        <article class="proj-card" role="article">
+          <div class="proj-thumb">
+            <img src="https://images.unsplash.com/photo-1556742046-cdcb1f3d8d53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-Commerce">
+          </div>
           <div class="proj-body">
             <h3>ShopSphere</h3>
             <p>Modern e-commerce platform with product management and payment integration.</p>
@@ -300,48 +305,48 @@
         </article>
 
         <article class="proj-card" role="article">
-          <div class="proj-thumb"><img src="https://source.unsplash.com/400x300/?news,media" alt="NewsWave"></div>
+          <div class="proj-thumb">
+            <img src="https://images.unsplash.com/photo-1522205152473-9c052e54a166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portfolio">
+          </div>
           <div class="proj-body">
-            <h3>NewsWave</h3>
-            <p>Real-time news portal integrated with external APIs for live updates.</p>
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio with responsive design to showcase projects and skills.</p>
           </div>
         </article>
 
         <article class="proj-card" role="article">
-          <div class="proj-thumb"><img src="https://source.unsplash.com/400x300/?productivity,workflow" alt="TaskFlow"></div>
+          <div class="proj-thumb">
+            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog">
+          </div>
           <div class="proj-body">
-            <h3>TaskFlow</h3>
-            <p>Project management & collaboration tool for teams and individuals.</p>
+            <h3>Blog Platform</h3>
+            <p>Content platform with CMS features and SEO-friendly structure.</p>
           </div>
         </article>
 
         <article class="proj-card" role="article">
-          <div class="proj-thumb"><img src="https://source.unsplash.com/400x300/?online,education" alt="EduLearn"></div>
+          <div class="proj-thumb">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Travel">
+          </div>
           <div class="proj-body">
-            <h3>EduLearn</h3>
-            <p>Online learning platform with interactive courses and progress tracking.</p>
+            <h3>Travel Website</h3>
+            <p>Travel blog & booking platform with interactive maps and itineraries.</p>
           </div>
         </article>
 
         <article class="proj-card" role="article">
-          <div class="proj-thumb"><img src="https://source.unsplash.com/400x300/?fitness,health" alt="HealthTrack"></div>
-          <div class="proj-body">
-            <h3>HealthTrack</h3>
-            <p>Fitness & health tracking app with personalized dashboards.</p>
+          <div class="proj-thumb">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chat App">
           </div>
-        </article>
-
-        <article class="proj-card" role="article">
-          <div class="proj-thumb"><img src="https://source.unsplash.com/400x300/?dashboard,analytics" alt="SkyAdmin"></div>
           <div class="proj-body">
-            <h3>SkyAdmin</h3>
-            <p>Powerful admin dashboard for analytics and user management.</p>
+            <h3>Real-Time Chat App</h3>
+            <p>Web messenger with live updates and message persistence.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- CONTACT (screenshot-like) -->
+    <!-- CONTACT (form only) -->
     <section id="contact" aria-labelledby="contact-title">
       <h2 class="section-title" id="contact-title">Contact</h2>
       <div class="contact-wrap">
@@ -358,35 +363,45 @@
 
           <button class="send-btn" id="sendBtn">Send Message</button>
         </div>
+      </div>
     </section>
 
     <footer>
-      <div>© 2025 Zainii |Email: zainiich04@gmail.com
-           Location: Pakistan</div>
+      <div>© 2025 Zainii | 
+        Email: <a href="mailto:zainiich04@gmail.com" style="color:#f97316;font-weight:600;">zainiich04@gmail.com</a> | 
+        Location: Pakistan
+      </div>
     </footer>
   </main>
 
   <script>
-    // demo send button behaviour (no backend)
+    // Contact form → WhatsApp first, fallback Gmail
     document.getElementById('sendBtn').addEventListener('click', function(e){
       e.preventDefault();
       const name = document.getElementById('cname').value.trim();
       const email = document.getElementById('cemail').value.trim();
       const msg = document.getElementById('cmsg').value.trim();
+
       if(!name || !email || !msg){
         alert('Please fill all fields.');
         return;
       }
-      this.disabled = true;
-      this.textContent = 'Sending...';
+
+      const fullMsg = New Message from Portfolio:\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg};
+
+      // WhatsApp link (your number)
+      const whatsappLink = https://wa.me/923163516125?text=${encodeURIComponent(fullMsg)};
+
+      // Gmail fallback
+      const gmailLink = mailto:zainiich04@gmail.com?subject=New Portfolio Message&body=${encodeURIComponent(fullMsg)};
+
+      // Try WhatsApp first
+      window.location.href = whatsappLink;
+
+      // If WhatsApp doesn't open in 3s, open Gmail
       setTimeout(()=>{
-        alert('Message sent! Thank you.');
-        this.disabled = false;
-        this.textContent = 'Send Message';
-        document.getElementById('cname').value='';
-        document.getElementById('cemail').value='';
-        document.getElementById('cmsg').value='';
-      },1200);
+        window.location.href = gmailLink;
+      }, 3000);
     });
 
     // simple menu button toggle (visual)
@@ -398,5 +413,3 @@
   </script>
 </body>
 </html>
-
-
