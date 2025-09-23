@@ -263,16 +263,18 @@
         return;
       }
 
-      const fullMsg = New Message from Portfolio:%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${msg};
+      const fullMsg = Name: ${name}%0AEmail: ${email}%0AMessage: ${msg};
 
       const whatsappLink = https://wa.me/923163516125?text=${fullMsg};
       const gmailLink = mailto:zainiich04@gmail.com?subject=New Portfolio Message&body=${fullMsg};
 
-      // ✅ Open WhatsApp first
-      window.location.href = whatsappLink;
+      // ✅ Open WhatsApp
+      window.open(whatsappLink, "_blank");
 
-      // ✅ Fallback Gmail after 3s
-      setTimeout(()=>{ window.location.href = gmailLink; }, 3000);
+      // ✅ Fallback Gmail after 3s (agar WhatsApp na chale)
+      setTimeout(()=>{ 
+        if(document.hasFocus()) window.location.href = gmailLink; 
+      }, 3000);
     });
 
     // menu toggle
