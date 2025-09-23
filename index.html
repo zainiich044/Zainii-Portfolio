@@ -20,7 +20,7 @@
       color:#1f2937;
     }
 
-    /* HEADER (logo left + Menu button right) */
+    /* HEADER */
     .header {
       max-width:1100px;
       margin:18px auto;
@@ -48,19 +48,9 @@
       font-size:18px;
       box-shadow:0 8px 20px rgba(2,6,23,0.08);
     }
-    .brand .text {
-      line-height:1;
-    }
-    .brand .text .name {
-      font-size:18px;
-      font-weight:800;
-      color:#0b2a44;
-    }
-    .brand .text .role {
-      font-size:13px;
-      color:var(--muted);
-      margin-top:4px;
-    }
+    .brand .text { line-height:1; }
+    .brand .text .name { font-size:18px; font-weight:800; color:#0b2a44; }
+    .brand .text .role { font-size:13px; color:var(--muted); margin-top:4px; }
     .menu {
       background:#eef2f7;
       border:1px solid #d7e2f2;
@@ -81,20 +71,9 @@
       border-radius:12px;
       box-shadow:0 10px 30px rgba(15,34,54,0.06);
     }
-    .hero .title {
-      font-size:34px;
-      font-weight:800;
-      color:#0b2a44;
-      margin:4px 0 12px;
-      line-height:1.04;
-    }
+    .hero .title { font-size:34px; font-weight:800; color:#0b2a44; margin:4px 0 12px; line-height:1.04; }
     .hero .title .accent { color: var(--blue); }
-    .hero .desc {
-      color:#475569;
-      max-width:760px;
-      margin-bottom:18px;
-      font-size:16px;
-    }
+    .hero .desc { color:#475569; max-width:760px; margin-bottom:18px; font-size:16px; }
     .hero .controls { display:flex; gap:14px; flex-wrap:wrap; }
     .btn {
       padding:12px 22px;
@@ -112,7 +91,7 @@
     h2.section-title { color:var(--blue); font-size:22px; margin-bottom:10px; text-align:left; }
     p.section-sub { color:var(--muted); margin-bottom:18px; text-align:left; }
 
-    /* SKILLS cards (grid) */
+    /* SKILLS */
     .skills-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -130,7 +109,7 @@
     .bar-wrap { background:#eef2f6; height:12px; border-radius:10px; overflow:hidden; }
     .bar { height:100%; background:linear-gradient(90deg,var(--accent), #ff8a42); border-radius:10px; }
 
-    /* PROJECTS list (vertical cards with direct Unsplash links) */
+    /* PROJECTS */
     .projects-list { display:flex; flex-direction:column; gap:18px; margin-top:12px; }
     .proj-card {
       background:var(--card-bg);
@@ -147,8 +126,7 @@
     .proj-body h3 { margin:0; color:var(--blue); font-size:18px; }
     .proj-body p { margin:8px 0 0; color:#475569; font-size:14px; line-height:1.45; }
 
-    /* CONTACT - form card */
-    .contact-wrap { margin-top:12px; }
+    /* CONTACT */
     .contact-card {
       background:var(--card-bg);
       border-radius:12px;
@@ -170,10 +148,6 @@
       resize:vertical;
     }
     .contact-card textarea { min-height:120px; }
-    .contact-card input:focus, .contact-card textarea:focus {
-      border-color: rgba(249,115,22,0.35);
-      box-shadow:0 8px 24px rgba(249,115,22,0.06);
-    }
     .send-btn {
       width:100%;
       background:var(--accent);
@@ -195,7 +169,6 @@
       text-align:center;
     }
 
-    /* responsive tweaks */
     @media(max-width:880px){
       .hero { padding:28px; }
       .brand .text .name { font-size:16px; }
@@ -205,172 +178,75 @@
 </head>
 <body>
 
-  <!-- TOP HEADER -->
-  <header class="header" role="banner">
-    <div class="brand" aria-hidden="false">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">
       <div class="box">ZC</div>
       <div class="text">
         <div class="name">Zainii Ch</div>
         <div class="role">Full-Stack Web Developer</div>
       </div>
     </div>
-
-    <button class="menu" aria-expanded="false">Menu</button>
+    <button class="menu">Menu</button>
   </header>
 
   <!-- HERO -->
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 class="title" id="hero-title">Hi, I'm <span class="accent">Zainii</span></h1>
-      <div class="desc">Full-Stack Web Developer passionate about building modern, efficient, and scalable web applications. I build production-ready websites and web apps using React, Node.js and modern tooling.</div>
-
-      <div class="controls" style="margin-top:18px;">
+    <section class="hero">
+      <h1 class="title">Hi, I'm <span class="accent">Zainii</span></h1>
+      <div class="desc">Full-Stack Web Developer passionate about building modern, efficient, and scalable web applications.</div>
+      <div class="controls">
         <a class="btn primary" href="#projects">View My Work</a>
         <a class="btn outline" href="#contact">Contact Me</a>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section aria-labelledby="about-title">
-      <h2 class="section-title" id="about-title">About Me</h2>
-      <p class="section-sub">I am a full-stack developer based in Punjab, Pakistan. I create dynamic web applications using React, Node.js, Tailwind CSS and MongoDB with focus on performance and clean UX.</p>
+    <section>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">I create dynamic web apps using React, Node.js, Tailwind CSS, and MongoDB with clean UX and performance focus.</p>
     </section>
 
     <!-- SKILLS -->
-    <section aria-labelledby="skills-title">
-      <h2 class="section-title" id="skills-title">Skills</h2>
-      <p class="section-sub">Main technologies I use:</p>
-      <div class="skills-grid" role="list">
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>React</div><div>95%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:95%"></div></div>
-        </div>
-
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>CSS</div><div>100%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:100%"></div></div>
-        </div>
-
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>Tailwind CSS</div><div>100%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:100%"></div></div>
-        </div>
-
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>JavaScript</div><div>95%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:95%"></div></div>
-        </div>
-
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>Node.js</div><div>85%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:85%"></div></div>
-        </div>
-
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>Express.js</div><div>90%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:90%"></div></div>
-        </div>
-
-        <div class="skill-card" role="listitem">
-          <div class="skill-row"><div>MongoDB</div><div>95%</div></div>
-          <div class="bar-wrap"><div class="bar" style="width:95%"></div></div>
-        </div>
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-row"><div>React</div><div>95%</div></div><div class="bar-wrap"><div class="bar" style="width:95%"></div></div></div>
+        <div class="skill-card"><div class="skill-row"><div>CSS</div><div>100%</div></div><div class="bar-wrap"><div class="bar" style="width:100%"></div></div></div>
+        <div class="skill-card"><div class="skill-row"><div>Tailwind CSS</div><div>100%</div></div><div class="bar-wrap"><div class="bar" style="width:100%"></div></div></div>
+        <div class="skill-card"><div class="skill-row"><div>JavaScript</div><div>95%</div></div><div class="bar-wrap"><div class="bar" style="width:95%"></div></div></div>
+        <div class="skill-card"><div class="skill-row"><div>Node.js</div><div>85%</div></div><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+        <div class="skill-card"><div class="skill-row"><div>Express.js</div><div>90%</div></div><div class="bar-wrap"><div class="bar" style="width:90%"></div></div></div>
+        <div class="skill-card"><div class="skill-row"><div>MongoDB</div><div>95%</div></div><div class="bar-wrap"><div class="bar" style="width:95%"></div></div></div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 class="section-title" id="projects-title">Projects</h2>
-      <p class="section-sub">Featured projects (click to view)</p>
-
-      <div class="projects-list" role="list">
-        <article class="proj-card" role="article">
-          <div class="proj-thumb">
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SkyAdmin">
-          </div>
-          <div class="proj-body">
-            <h3>SkyAdmin</h3>
-            <p>Powerful admin dashboard for analytics and user management.</p>
-          </div>
-        </article>
-
-        <article class="proj-card" role="article">
-          <div class="proj-thumb">
-            <img src="https://images.unsplash.com/photo-1556742046-cdcb1f3d8d53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-Commerce">
-          </div>
-          <div class="proj-body">
-            <h3>ShopSphere</h3>
-            <p>Modern e-commerce platform with product management and payment integration.</p>
-          </div>
-        </article>
-
-        <article class="proj-card" role="article">
-          <div class="proj-thumb">
-            <img src="https://images.unsplash.com/photo-1522205152473-9c052e54a166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portfolio">
-          </div>
-          <div class="proj-body">
-            <h3>Portfolio Website</h3>
-            <p>Personal portfolio with responsive design to showcase projects and skills.</p>
-          </div>
-        </article>
-
-        <article class="proj-card" role="article">
-          <div class="proj-thumb">
-            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog">
-          </div>
-          <div class="proj-body">
-            <h3>Blog Platform</h3>
-            <p>Content platform with CMS features and SEO-friendly structure.</p>
-          </div>
-        </article>
-
-        <article class="proj-card" role="article">
-          <div class="proj-thumb">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Travel">
-          </div>
-          <div class="proj-body">
-            <h3>Travel Website</h3>
-            <p>Travel blog & booking platform with interactive maps and itineraries.</p>
-          </div>
-        </article>
-
-        <article class="proj-card" role="article">
-          <div class="proj-thumb">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chat App">
-          </div>
-          <div class="proj-body">
-            <h3>Real-Time Chat App</h3>
-            <p>Web messenger with live updates and message persistence.</p>
-          </div>
-        </article>
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-list">
+        <article class="proj-card"><div class="proj-thumb"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="SkyAdmin"></div><div class="proj-body"><h3>SkyAdmin</h3><p>Admin dashboard with analytics and management tools.</p></div></article>
+        <article class="proj-card"><div class="proj-thumb"><img src="https://images.unsplash.com/photo-1556742046-cdcb1f3d8d53?auto=format&fit=crop&w=800&q=80" alt="ShopSphere"></div><div class="proj-body"><h3>ShopSphere</h3><p>E-commerce platform with payment integration.</p></div></article>
+        <article class="proj-card"><div class="proj-thumb"><img src="https://images.unsplash.com/photo-1522205152473-9c052e54a166?auto=format&fit=crop&w=800&q=80" alt="Portfolio"></div><div class="proj-body"><h3>Portfolio Website</h3><p>Responsive personal portfolio website.</p></div></article>
+        <article class="proj-card"><div class="proj-thumb"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80" alt="Blog"></div><div class="proj-body"><h3>Blog Platform</h3><p>Content platform with SEO features.</p></div></article>
+        <article class="proj-card"><div class="proj-thumb"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Travel"></div><div class="proj-body"><h3>Travel Website</h3><p>Travel blog & booking system.</p></div></article>
+        <article class="proj-card"><div class="proj-thumb"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Chat"></div><div class="proj-body"><h3>Real-Time Chat App</h3><p>Web messenger with live updates.</p></div></article>
       </div>
     </section>
 
-    <!-- CONTACT (form only) -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 class="section-title" id="contact-title">Contact</h2>
-      <div class="contact-wrap">
-        <div class="contact-card" role="form" aria-label="Contact form">
-          <div class="form-field">
-            <input id="cname" type="text" placeholder="Your Name" />
-          </div>
-          <div class="form-field">
-            <input id="cemail" type="email" placeholder="Your Email" />
-          </div>
-          <div class="form-field">
-            <textarea id="cmsg" placeholder="Your Message"></textarea>
-          </div>
-
-          <button class="send-btn" id="sendBtn">Send Message</button>
-        </div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-card">
+        <div class="form-field"><input id="cname" type="text" placeholder="Your Name" /></div>
+        <div class="form-field"><input id="cemail" type="email" placeholder="Your Email" /></div>
+        <div class="form-field"><textarea id="cmsg" placeholder="Your Message"></textarea></div>
+        <button class="send-btn" id="sendBtn">Send Message</button>
       </div>
     </section>
 
     <footer>
-      <div>© 2025 Zainii | 
-        Email: <a href="mailto:zainiich04@gmail.com" style="color:#f97316;font-weight:600;">zainiich04@gmail.com</a> | 
-        Location: Pakistan
-      </div>
+      © 2025 Zainii | All Rights Reserved
     </footer>
   </main>
 
@@ -389,25 +265,19 @@
 
       const fullMsg = New Message from Portfolio:\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg};
 
-      // WhatsApp link (your number)
       const whatsappLink = https://wa.me/923163516125?text=${encodeURIComponent(fullMsg)};
-
-      // Gmail fallback
       const gmailLink = mailto:zainiich04@gmail.com?subject=New Portfolio Message&body=${encodeURIComponent(fullMsg)};
 
       // Try WhatsApp first
       window.location.href = whatsappLink;
 
-      // If WhatsApp doesn't open in 3s, open Gmail
-      setTimeout(()=>{
-        window.location.href = gmailLink;
-      }, 3000);
+      // Fallback Gmail after 3s
+      setTimeout(()=>{ window.location.href = gmailLink; }, 3000);
     });
 
-    // simple menu button toggle (visual)
+    // menu toggle
     document.querySelector('.menu').addEventListener('click', function(){
-      const open = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!open));
+      const open = this.textContent === 'Close';
       this.textContent = open ? 'Menu' : 'Close';
     });
   </script>
