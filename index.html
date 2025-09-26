@@ -145,6 +145,11 @@
       font-size:15px;
       outline:none;
       resize:vertical;
+      transition: border-color 0.3s ease;
+    }
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+      border-color: var(--accent);
     }
     .contact-card textarea { min-height:120px; }
     .send-btn {
@@ -158,6 +163,15 @@
       font-size:16px;
       cursor:pointer;
       box-shadow:0 12px 30px rgba(249,115,22,0.12);
+      margin-top:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    /* Remove underline from links wrapping buttons */
+    .contact-card a {
+      text-decoration:none;
     }
 
     footer {
@@ -167,6 +181,13 @@
       padding:14px 0;
       text-align:center;
     }
+    footer a { 
+      color:#fff; 
+      text-decoration:none; 
+      display:inline-block; 
+      margin-top:6px;
+      font-weight:600;
+    }
 
     @media(max-width:880px){
       .hero { padding:28px; }
@@ -174,11 +195,13 @@
       .proj-thumb { width:72px; height:60px; flex:0 0 72px; }
     }
   </style>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <!-- HEADER -->
-  <header class="header">
+  <header class="header" id="top">
     <div class="brand">
       <div class="box">ZC</div>
       <div class="text">
@@ -240,49 +263,24 @@
         <div class="form-field"><input id="cname" type="text" placeholder="Your Name" /></div>
         <div class="form-field"><input id="cemail" type="email" placeholder="Your Email" /></div>
         <div class="form-field"><textarea id="cmsg" placeholder="Your Message"></textarea></div>
-        <button class="send-btn" id="sendBtn">Send Message</button>
+        
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/923163516125?text=Hello%20Zainii" target="_blank">
+          <button class="send-btn"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+        </a>
+        
+        <!-- Gmail Button -->
+        <a href="mailto:zainiich04@gmail.com?subject=New%20Portfolio%20Message&body=Hello%20Zainii">
+          <button class="send-btn"><i class="fas fa-envelope"></i> Send via Gmail</button>
+        </a>
       </div>
     </section>
 
     <footer>
-      © 2025 Zainii | All Rights Reserved
+      © 2025 Zainii | All Rights Reserved  
+      <br>
+      <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
     </footer>
   </main>
-
- <script>
-  document.getElementById('sendBtn').addEventListener('click', function(e){
-    e.preventDefault();
-
-    const name = document.getElementById('cname').value.trim();
-    const email = document.getElementById('cemail').value.trim();
-    const msg = document.getElementById('cmsg').value.trim();
-
-    if(!name || !email || !msg){
-      alert('Please fill all fields.');
-      return;
-    }
-
-    const fullMsg = New Message from Portfolio:%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${msg};
-
-    const whatsappLink = https://wa.me/923163516125?text=${fullMsg};
-    const gmailLink = mailto:zainiich04@gmail.com?subject=New Portfolio Message&body=${fullMsg};
-
-    // WhatsApp open karo new tab me
-    const win = window.open(whatsappLink, "_blank");
-
-    // Agar WhatsApp open nahi hota to 3s baad Gmail open karo
-    setTimeout(()=>{
-      if(!win || win.closed || typeof win.closed=="undefined"){
-        window.location.href = gmailLink;
-      }
-    }, 3000);
-  });
-
-  // menu toggle
-  document.querySelector('.menu').addEventListener('click', function(){
-    const open = this.textContent === 'Close';
-    this.textContent = open ? 'Menu' : 'Close';
-  });
-</script>
 </body>
 </html>
